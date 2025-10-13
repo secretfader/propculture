@@ -13,11 +13,13 @@ import { Image } from "astro:assets";
         <title>Prop Culture Flight Club</title>
     </head>
     <body>
-        <Image
-            src={logo}
-            width="500"
-            alt="Prop Culture FPV Logo"
-            class="mx-auto max-w-2xl"
-        />
+        <div class="container mx-auto p-2">
+            <Image
+                src={logo}
+                width="500"
+                alt="Prop Culture FPV Logo"
+                class="mx-auto max-w-2xl rounded-full"
+            />
+        </div>
     </body>
 </html>
