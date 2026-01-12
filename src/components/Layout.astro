@@ -1,0 +1,46 @@
+---
+import "../styles/global.css";
+import Nav from "./Nav.astro";
+
+interface Props {
+    title?: string;
+    description?: string;
+    classes?: [string];
+    image?: string;
+}
+
+const { title, classes, description, image } = Astro.props;
+const canonical = new URL(Astro.url.pathname, Astro.site);
+Astro;
+
+const printTitle =
+    Astro.url.pathname === "/"
+        ? `Prop Culture Flight Club | ${title}`
+        : `${title} | Prop Culture Flight Club`;
+---
+
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+        <meta name="viewport" content="width=device-width" />
+        <meta name="generator" content={Astro.generator} />
+        {image ? <meta name="og:image" content={image} /> : undefined}
+        {description && <meta name="description" content={description} />}
+        <title>{printTitle}</title>
+        {canonical && <link rel="canonical" href={canonical} />}
+        <slot name="structured-data" />
+        <script
+            defer
+            src="https://cloud.umami.is/script.js"
+            data-website-id="d1356b51-617b-4df3-b5fd-eab591af73b6"></script>
+        <script
+            type="module"
+            src="https://cdn.jsdelivr.net/npm/youtube-video-element@1.1/+esm"
+        ></script>
+    </head>
+    <body class:list={["font-humanist", ...(classes || [])]}>
+        <Nav />
+        <slot />
+    </body>
+</html>

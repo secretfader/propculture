@@ -1,31 +1,170 @@
 ---
 import "../styles/global.css";
-import logo from "../assets/logo.png";
-import { Image } from "astro:assets";
+import Layout from "../components/Layout.astro";
+import Container from "../components/Container.astro";
 ---
 
-<html lang="en">
-    <head>
-        <meta charset="utf-8" />
-        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-        <meta name="viewport" content="width=device-width" />
-        <meta name="generator" content={Astro.generator} />
-        <title>Prop Culture Flight Club</title>
-    </head>
-    <body>
-        <div class="container mx-auto p-2">
-            <Image
-                src={logo}
-                alt="Prop Culture FPV Logo"
-                class="w-full px-4 mx-auto max-w-2xl rounded-full"
-            />
-            <div class="mx-auto max-w-xl flex justify-center mt-8">
-                <a
-                    href="https://discord.gg/8QJS2Ydu"
-                    class="outline-1 outline-gray-400 p-4"
-                    >Join the Discord Community</a
-                >
+<Layout title="Build. Code. Fly. Together.">
+    <section class="relative bg-slate-900 text-white overflow-hidden">
+        <div class="max-w-7xl mx-auto px-6 py-20">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <!-- Text Content -->
+                <div>
+                    <h1
+                        class="text-4xl md:text-5xl xl:text-6xl font-bold leading-tight"
+                    >
+                        Build. Code. Fly.
+                    </h1>
+
+                    <p class="mt-6 text-lg text-slate-300 max-w-xl">
+                        Prop Culture is a community of drone builders, tuners,
+                        and pilots built around curiosity, collaboration, and
+                        education. We bring all ages together through the magic
+                        of FPV drone design and flight.
+                    </p>
+
+                    <div class="mt-8 flex flex-wrap gap-4">
+                        <a
+                            href="https://discord.gg/tNTTPzkrra"
+                            class="inline-flex items-center justify-center px-6 py-3 rounded-xl bg-sky-500 hover:bg-sky-400 text-white font-semibold transition"
+                        >
+                            Join the Club on Discord
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Video -->
+                <div class="relative rounded-2xl overflow-hidden shadow-2xl">
+                    <video
+                        class="w-full h-full object-cover"
+                        autoplay
+                        muted
+                        loop
+                        playsinline
+                    >
+                        <source src="/flight.mp4" type="video/mp4" />
+                        Your browser does not support the video tag.
+                    </video>
+
+                    <!-- Optional overlay -->
+                    <div
+                        class="absolute inset-0 bg-gradient-to-tr from-black/40 to-transparent"
+                    >
+                    </div>
+                </div>
             </div>
         </div>
-    </body>
-</html>
+    </section>
+    <section class="bg-slate-50 text-slate-900 py-20">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center max-w-3xl mx-auto">
+                <h2 class="text-3xl md:text-4xl font-bold">What We Do</h2>
+                <p class="mt-4 text-lg text-slate-600">
+                    Our club combines hands-on learning, teamwork, and
+                    real-world STEM applications through drones.
+                </p>
+            </div>
+
+            <div
+                class="mt-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8"
+            >
+                <!-- Build -->
+                <div
+                    class="bg-white rounded-2xl p-8 shadow-sm hover:shadow-md transition"
+                >
+                    <div class="text-4xl">🔧</div>
+                    <h3 class="mt-4 text-xl font-semibold">Build</h3>
+                    <p class="mt-2 text-slate-600">
+                        Assemble drones from components while learning
+                        electronics, mechanics, and design fundamentals.
+                    </p>
+                </div>
+
+                <!-- Code -->
+                <div
+                    class="bg-white rounded-2xl p-8 shadow-sm hover:shadow-md transition"
+                >
+                    <div class="text-4xl">💻</div>
+                    <h3 class="mt-4 text-xl font-semibold">Code</h3>
+                    <p class="mt-2 text-slate-600">
+                        Program flight controllers, sensors, and autonomous
+                        behaviors using real-world software tools.
+                    </p>
+                </div>
+
+                <!-- Fly -->
+                <div
+                    class="bg-white rounded-2xl p-8 shadow-sm hover:shadow-md transition"
+                >
+                    <div class="text-4xl">✈️</div>
+                    <h3 class="mt-4 text-xl font-semibold">Fly</h3>
+                    <p class="mt-2 text-slate-600">
+                        Learn piloting skills, aerodynamics, and safety while
+                        flying drones in controlled environments.
+                    </p>
+                </div>
+
+                <!-- Create -->
+                <div
+                    class="bg-white rounded-2xl p-8 shadow-sm hover:shadow-md transition"
+                >
+                    <div class="text-4xl">🚀</div>
+                    <h3 class="mt-4 text-xl font-semibold">Create</h3>
+                    <p class="mt-2 text-slate-600">
+                        Collaborate on challenges, experiments, and creative
+                        projects that turn ideas into flight-ready solutions.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-slate-900 text-slate-300">
+        <div class="max-w-7xl mx-auto px-6 py-16">
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12">
+                <!-- Club Info -->
+                <div>
+                    <h3 class="text-white text-lg font-semibold">
+                        Prop Culture FPV
+                    </h3>
+                    <p class="mt-4 text-sm leading-relaxed">
+                        A welcoming community where members learn STEM through
+                        hands-on drone building, coding, and flight.
+                    </p>
+                </div>
+            </div>
+            <div
+                class="mt-16 border-t border-slate-700 pt-8 flex flex-col md:flex-row items-center justify-between gap-4"
+            >
+                <p class="text-xs text-slate-400">
+                    &copy; 2025-2026 Prop Culture FPV. All rights reserved.
+                </p>
+
+                <!-- Social Links -->
+                <div class="flex gap-4 text-slate-400">
+                    <a
+                        href="https://instagram.com/@propculturefpv"
+                        aria-label="Instagram"
+                        class="hover:text-white transition"
+                    >
+                        Instagram
+                    </a>
+                    <a
+                        href="https://youtube.com/@propculturefpv"
+                        aria-label="YouTube"
+                        class="hover:text-white transition"
+                    >
+                        YouTube
+                    </a>
+                    <a
+                        href="https://discord.gg/tNTTPzkrra"
+                        aria-label="Discord"
+                        class="hover:text-white transition"
+                    >
+                        Discord
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+</Layout>

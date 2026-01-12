@@ -1,0 +1,7 @@
+---
+const classes = Astro.props.classes || [];
+---
+
+<div class:list={["container", "mx-auto", ...classes]}>
+    <slot />
+</div>
